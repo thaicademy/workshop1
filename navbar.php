@@ -49,16 +49,16 @@
           <a class="nav-link" href="service.php">บริการของเรา</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="blogs.php">บล็อก</a>
+          <a class="nav-link" href="blog_select.php">บล็อก</a>
         </li>
       </ul>
 
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 <?php
-  if($_SESSION['status'] == 'admin'){
+  if($_SESSION['email']){
 ?>
   <li class="nav-item"><a href="logout.php"  class="nav-link"> Logout </a></li>
-  <li class="nav-item"><a href="resume.php"  class="nav-link"> ผู้จัดทำ </a></li>
+  <li class="nav-item"><a href="profile.php"  class="nav-link"> Profile </a></li>
 <?php
   }else{
 ?>

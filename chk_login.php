@@ -12,7 +12,7 @@
           $_SESSION['email'] = $row['email'];
           $_SESSION['status'] = $row['status'];
           $_SESSION['school'] = "โรงเรียนฝึกอาชีพกรุงเทมหมานคร(ดินแดง1)";
-          header("location: ./dasboard.php"); 
+          header("location: ./dashboard.php"); 
       }else{
         echo "<script>
                 alert('Email หรือ Password ไม่ถูกต้อง');

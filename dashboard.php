@@ -19,11 +19,15 @@
     <div class="row">
         <div class="col-sm-3">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+                <?php if($_SESSION["status"] == "admin"){ ?>
+                    <li class="list-group-item"><a href="cat_form.php"> เพิ่มประเภทสินค้า </a></li>
+                <?php } ?>    
+                <?php if($_SESSION["status"] == "admin"){ ?>
+                    <li class="list-group-item"><a href="product_form.php"> เพิ่มสินค้า </a></li>
+                <?php } ?>
+                <?php if($_SESSION["status"] == "admin"){ ?>
+                    <li class="list-group-item"><a href="blog_form.php"> เพิ่มบล็อก </a></li>
+                <?php } ?>
             </ul>
 
         </div>
@@ -31,7 +35,7 @@
 
             <h1> <?php echo "$_SESSION[email]";  ?> </h1>
             <p> <?php echo "$_SESSION[school]"; ?> </p>
-            <p>เขาเป็น <?php echo "$_SESSION[status]"; ?></p>
+            <p>สถานะภาพ : <?php echo "$_SESSION[status]"; ?></p>
 
         </div>
 
