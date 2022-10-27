@@ -1,3 +1,6 @@
+<?php    
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +16,17 @@
       include "navbar.php";
    ?>
     <div class="container-fluid">
-        <h1>แสดงสินค้า</h1>
+
+        <h1>แสดงสินค้า 
+        <?php
+        if($_SESSION['status'] == 'admin'){
+            echo"<a href='product_form.php' class='btn btn-primary'> เพิ่มสินค้า </a>";
+        }
+        ?>
+        </h1>
+       
         <div class="row row-cols-1 row-cols-md-3 g-4">
-<?php
+  <?php
      include "connect.php";
      $sql = "SELECT * FROM tbl_products";
      $result = mysqli_query($conn , $sql);
@@ -32,12 +43,16 @@
                                echo "จำนวนสินค้าในคลัง $row[stock] <br />";
                                echo "$row[description] <br />";
                                echo "$row[cat_name] <br />"; 
+                               if($_SESSION['status']== 'admin'){
+                                  echo "<a href='product_edit.php' class='btn btn-info'>แก้ไข</a> ";
+                                  echo "<a href='product_delete.php?id=$row[id] && img=$row[img]' class='btn btn-danger'>ลบ</a>";
+                               }
                             ?>
                         </p>
                     </div>
                 </div>
             </div>
-<?php
+            <?php
     }
 ?>
         </div>

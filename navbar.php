@@ -43,7 +43,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="products.php">สินค้า</a>
+          <a class="nav-link" href="product_select.php">สินค้า</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="service.php">บริการของเรา</a>

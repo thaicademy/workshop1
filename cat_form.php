@@ -26,7 +26,6 @@
                 <input type="submit" value="บึกทึกข้อมูล" class="btn btn-success" />
             </div>
         </form>
-
     </div>
 </body>
 

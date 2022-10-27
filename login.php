@@ -13,6 +13,7 @@
 <body>
     <?php
       include "navbar.php";
+      
     ?>
 
     <div class="container-fluid col-md-5">
