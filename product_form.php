@@ -12,7 +12,7 @@
     <?php
       include "navbar.php";
     ?>
-
+    
     <div class="container-fluid col-md-6">
         <form action="product_insert.php" method="post" enctype="multipart/form-data"><br />
             <div class="row mb-2">
