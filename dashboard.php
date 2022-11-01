@@ -32,10 +32,12 @@
 
         </div>
         <div class="col-sm-9">
+           <h2> ยินดีต้อรับคุณ <?php echo "$_SESSION[firstname] $_SESSION[lastname]";  ?> </h2>
 
-            <h1> <?php echo "$_SESSION[email]";  ?> </h1>
+            <p> <?php echo "$_SESSION[email]";  ?> </p>
             <p> <?php echo "$_SESSION[school]"; ?> </p>
             <p>สถานะภาพ : <?php echo "$_SESSION[status]"; ?></p>
+            <p>ที่อยู่ <?php echo "$_SESSION[address]"; ?></p>
 
         </div>
 

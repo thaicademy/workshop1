@@ -15,6 +15,8 @@ if (mysqli_query($conn, $sql)) {
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
+
 //echo "ไม่ส่ามารถบัณทีกได้";
 mysqli_close($conn);
+
 ?>
