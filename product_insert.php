@@ -5,6 +5,8 @@ $filename = $_FILES["img"]["name"];
 $tempname = $_FILES["img"]["tmp_name"];
 $newfilename = "./images/products/" . $filename;
 
+
+
 $sql = "INSERT INTO tbl_products (name, price, stock, description, cat_name, img)
         VALUES ('$_POST[name]', '$_POST[price]', '$_POST[stock]', '$_POST[description]', '$_POST[cat_name]','$newfilename')";
 

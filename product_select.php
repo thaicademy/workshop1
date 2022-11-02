@@ -25,7 +25,7 @@
         ?>
         </h1>
        
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
   <?php
      include "connect.php";
      $sql = "SELECT * FROM tbl_products";
@@ -34,7 +34,7 @@
 ?>
             <div class="col">
                 <div class="card">
-                    <img src="<?php echo $row[img]; ?>" class="card-img-top" />
+                    <img src="<?php echo $row[img]; ?>" class="card-img-top" style="max-height: 100px; object-fit: cover;" />
                     <div class="card-body">
                         <h5 class="card-title"> <?php echo "ชื่อสินค้า $row[name] "; ?></h5>
                         <p class="card-text">
@@ -48,7 +48,7 @@
                                   echo "<a href='product_delete.php?id=$row[id] && img=$row[img]' class='btn btn-danger'>ลบ</a>";
                                }
                             ?>
-                             <button class="btn btn-success" >สั่งซื้อสินค้า</button>
+                             <a href="order.php?pid=<?php echo $row[id]; ?>" class="btn btn-success" >สั่งซื้อสินค้า</a>
                         </p>
                     </div>
                 </div>
