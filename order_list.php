@@ -41,7 +41,8 @@
   <td><a href="order_delete.php?Line=<?php echo $i; ?>" class="btn btn-danger">ลบ</a></td>
 </tr>
 <?php
-     }  
+     } 
+      $_SESSION["num"] = $_SESSION["strQty"][$i];
   }
 ?>
 </table>

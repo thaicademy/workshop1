@@ -26,6 +26,7 @@
         </h1>
        
         <div class="row row-cols-1 row-cols-md-4 g-4">
+     
   <?php
      include "connect.php";
      $sql = "SELECT * FROM tbl_products";
@@ -36,11 +37,11 @@
                 <div class="card">
                     <img src="<?php echo $row[img]; ?>" class="card-img-top" style="max-height: 100px; object-fit: cover;" />
                     <div class="card-body">
-                        <h5 class="card-title"> <?php echo "ชื่อสินค้า $row[name] "; ?></h5>
+                        <h5 class="card-title"> <?php echo "$row[name] "; ?></h5>
                         <p class="card-text">
                             <?php
                                echo "ราคา $row[price] บาท <br />";
-                               echo "จำนวนสินค้าในคลัง $row[stock] <br />";
+                               echo "คงเหลือ $row[stock] <br />";
                                echo "$row[description] <br />";
                                echo "$row[cat_name] <br />"; 
                                if($_SESSION['status']== 'admin'){

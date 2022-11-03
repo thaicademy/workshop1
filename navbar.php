@@ -51,6 +51,12 @@
         <li class="nav-item">
           <a class="nav-link" href="blog_select.php">บล็อก</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="order_list.php" class="position-relative">ตะกร้า 
+             <span class="badge text-bg-danger"><?php echo $_SESSION["num"]; ?></span>
+          </a>
+        </li>
+
       </ul>
 
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
