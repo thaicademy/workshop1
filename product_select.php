@@ -48,7 +48,7 @@
                                   echo "<a href='product_delete.php?id=$row[id] && img=$row[img]' class='btn btn-danger'>ลบ</a>";
                                }
                             ?>
-                             <a href="order.php?pid=<?php echo $row[id]; ?>" class="btn btn-success" >สั่งซื้อสินค้า</a>
+                             <a href="order.php?product_id=<?php echo $row[id]; ?>" class="btn btn-success" >สั่งซื้อสินค้า</a>
                         </p>
                     </div>
                 </div>

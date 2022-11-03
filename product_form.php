@@ -17,7 +17,7 @@
         <form action="product_insert.php" method="post" enctype="multipart/form-data"><br />
             <div class="row mb-2">
                 <div class="col-md-3">
-                    name
+                    ชื่อสินค้า
                 </div>
                 <div class="col-md-9">
                     <input type="text" name="name" class="form-control" />
@@ -25,7 +25,7 @@
             </div>
             <div class="row mb-2">
                 <div class="col-md-3">
-                    price
+                    ราคา
                 </div>
                 <div class="col-md-9">
                     <input type="text" name="price" class="form-control" />
@@ -33,7 +33,7 @@
             </div>
             <div class="row mb-2">
                 <div class="col-md-3">
-                    stock
+                    คงเหลือ
                 </div>
                 <div class="col-md-9">
                     <input type="text" name="stock" class="form-control" />
@@ -41,7 +41,7 @@
             </div>
             <div class="row mb-2">
                 <div class="col-md-3">
-                    cat_name
+                    ประเภทสินค้า
                 </div>
                 <div class="col-md-9">
                     <input type="text" name="cat_name" class="form-control" />
@@ -49,7 +49,7 @@
             </div>
             <div class="row mb-2">
                 <div class="col-md-3">
-                    description
+                    รายละเอียด
                 </div>
                 <div class="col-md-9">
                     <textarea rows=" 5" cols="50" name="description" class="form-control"> </textarea>
