@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 11, 2022 at 12:44 PM
+-- Generation Time: Nov 04, 2022 at 12:51 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -63,7 +63,52 @@ CREATE TABLE `tbl_category` (
 
 INSERT INTO `tbl_category` (`id`, `cat_name`) VALUES
 (1, 'อุปโภค'),
-(2, 'บริโภค');
+(2, 'บริโภค'),
+(3, 'อิเล็กทรอนิกส์');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_orderdetail`
+--
+
+CREATE TABLE `tbl_orderdetail` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `qty` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `tbl_orderdetail`
+--
+
+INSERT INTO `tbl_orderdetail` (`id`, `order_id`, `product_id`, `qty`) VALUES
+(21, 40, 2, 2),
+(22, 41, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_orders`
+--
+
+CREATE TABLE `tbl_orders` (
+  `oid` int(11) NOT NULL,
+  `order_date` datetime DEFAULT NULL,
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `address` varchar(250) COLLATE utf8_bin NOT NULL,
+  `tel` varchar(20) COLLATE utf8_bin NOT NULL,
+  `email` varchar(20) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `tbl_orders`
+--
+
+INSERT INTO `tbl_orders` (`oid`, `order_date`, `name`, `address`, `tel`, `email`) VALUES
+(40, '2022-11-04 19:49:24', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(41, '2022-11-04 19:50:18', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -86,11 +131,8 @@ CREATE TABLE `tbl_products` (
 --
 
 INSERT INTO `tbl_products` (`id`, `name`, `stock`, `price`, `description`, `cat_name`, `img`) VALUES
-(1, 'srtgdfg', 20, 100, ' dfgdfg', 'test', './images/products/messageImage_1663138618479.jpg'),
-(2, 'dtydty', 200, 100, ' vhjnvjh', 'อุปโภค', './images/products/'),
-(3, 'hiojoi', 0, 0, ' jojo', 'jiojio', './images/products/download.jpg'),
-(4, 'hiojoi', 0, 0, ' jojo', 'jiojio', './images/products/download.jpg'),
-(5, 'test', 20, 100, ' test', 'test', './images/products/302317217_5496601157064754_6765919266768467945_n.jpg');
+(1, 'รองเท้า', 10, 500, ' ใช้สวมใส่', 'เครื่องแต่งกาย', './images/products/messageImage_1666233894578.jpg'),
+(2, 'Computer Notebook', 20, 25000, ' ใช้ทำงานพิมพ์เองสาร', 'อุปกรณ์ IT', './images/products/messageImage_1663138618479.jpg');
 
 -- --------------------------------------------------------
 
@@ -114,7 +156,8 @@ CREATE TABLE `tbl_users` (
 
 INSERT INTO `tbl_users` (`id`, `firstname`, `lastname`, `email`, `password`, `address`, `status`) VALUES
 (2, 'สมเกียรติ', 'ิ้่้ิใจดี', 'eleclabs@gmail.com', '1234', 'กทม', 'guest'),
-(3, 'สมศักดิ์', 'ใจเกินร้อย', 'admin@gmail.com', '1234', 'กทม', 'admin');
+(3, 'สมศักดิ์', 'ใจเกินร้อย', 'admin@gmail.com', '1234', 'กทม', 'admin'),
+(4, 'สมหมาย', 'ใจมาก', 'abc@gmail.com', '1234', 'กทม', 'guest');
 
 --
 -- Indexes for dumped tables
@@ -131,6 +174,18 @@ ALTER TABLE `tbl_blogs`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_orderdetail`
+--
+ALTER TABLE `tbl_orderdetail`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  ADD PRIMARY KEY (`oid`);
 
 --
 -- Indexes for table `tbl_products`
@@ -158,19 +213,31 @@ ALTER TABLE `tbl_blogs`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_orderdetail`
+--
+ALTER TABLE `tbl_orderdetail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `tbl_orders`
+--
+ALTER TABLE `tbl_orders`
+  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `tbl_products`
 --
 ALTER TABLE `tbl_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
