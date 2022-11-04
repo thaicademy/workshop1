@@ -16,7 +16,7 @@ if(!isset($_SESSION["intLine"])){
         $_SESSION["intLine"] = $_SESSION["intLine"]+1;
         $intNewLine = $_SESSION["intLine"];
         $_SESSION["strProductID"][$intNewLine] = $_GET["product_id"];
-        $_SESSION["strQty"][$intNewLine] = 1; //จำนวนที่สั่ง
+        $_SESSION["strQty"][$intNewLine] = 1;  //จำนวนที่สั่ง
     }
     echo "สั่งสินค้าเรียบร้อยแล้ว";
     header("Location: order_list.php");

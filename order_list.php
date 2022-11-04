@@ -31,6 +31,7 @@
         $row = mysqli_fetch_array($result);
         $Total = $_SESSION["strQty"][$i] * $row["price"];
         $SumTotal = $SumTotal+$Total;
+        
 ?>
 <tr>
   <td><?php echo $_SESSION["strProductID"][$i]; ?></td>
