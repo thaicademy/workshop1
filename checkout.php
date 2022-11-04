@@ -49,6 +49,7 @@
   }
 ?>
             </table>
+            <h3>รวมเป็นเงิน <?php echo number_format($SumTotal, 2); ?></h3>
         </div>
     </div>
 

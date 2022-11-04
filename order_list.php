@@ -46,7 +46,7 @@
   }
 ?>
 </table>
- <h2>รวมเป็นเงินทั้งสิ้น <?php echo number_format($SumTotal, 2); ?></h1>
+ <h3>รวมเป็นเงิน <?php echo number_format($SumTotal, 2); ?></h3>
  
  <?php
    if($SumTotal > 0){
