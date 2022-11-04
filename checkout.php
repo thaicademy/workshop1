@@ -26,10 +26,10 @@
                     <th>เป็นเงิน</th>
                 </tr>
 
-                <?php
+<?php
    $Total = 0;  
    $SumTotal = 0;
-  for($i=0; $i<=(int)$_SESSION["intLine"]; $i++){
+   for($i=0; $i<=(int)$_SESSION["intLine"]; $i++){
      if($_SESSION["strProductID"][$i] != ""){
         $sql = "SELECT * FROM tbl_products WHERE id = ' ".$_SESSION["strProductID"][$i]." ' ";
         $result= mysqli_query($conn, $sql);
