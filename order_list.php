@@ -43,7 +43,6 @@
 </tr>
 <?php
      } 
-      $_SESSION["num"] = $_SESSION["strQty"][$i];
   }
 ?>
 </table>

@@ -26,6 +26,28 @@
                     <th>เป็นเงิน</th>
                 </tr>
 
+                <?php
+   $Total = 0;  
+   $SumTotal = 0;
+  for($i=0; $i<=(int)$_SESSION["intLine"]; $i++){
+     if($_SESSION["strProductID"][$i] != ""){
+        $sql = "SELECT * FROM tbl_products WHERE id = ' ".$_SESSION["strProductID"][$i]." ' ";
+        $result= mysqli_query($conn, $sql);
+        $row = mysqli_fetch_array($result);
+        $Total = $_SESSION["strQty"][$i] * $row["price"];
+        $SumTotal = $SumTotal+$Total;      
+?>
+<tr>
+  <td><?php echo $_SESSION["strProductID"][$i]; ?></td>
+  <td><?php echo $row["name"]; ?></td>
+  <td><?php echo $row["price"]; ?></td>
+  <td><?php echo $_SESSION["strQty"][$i]; ?></td>
+  <td><?php echo number_format($Total,2); ?></td>
+</tr>
+<?php
+     } 
+  }
+?>
             </table>
         </div>
     </div>
