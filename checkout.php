@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5">
-           <form action="save_checkout.php">
+           <form action="save_checkout.php" method="post"  enctype="multipart/form-data">
                ชื่อผู้ซื้อ
                <input type="text" name="name" class="form-control" value="<?php echo $_SESSION[firstname] ." ". $_SESSION[lastname]; ?>" />
                อีเมลผู้ซื้อ 
