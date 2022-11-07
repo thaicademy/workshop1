@@ -46,10 +46,10 @@
                                echo "$row[cat_name] <br />"; 
                                if($_SESSION['status']== 'admin'){
                                   echo "<a href='product_edit.php' class='btn btn-info'>แก้ไข</a> ";
-                                  echo "<a href='product_delete.php?id=$row[id] && img=$row[img]' class='btn btn-danger'>ลบ</a>";
+                                  echo "<a href='product_delete.php?product_id=$row[product_id] && img=$row[img]' class='btn btn-danger'>ลบ</a>";
                                }
                             ?>
-                             <a href="order.php?product_id=<?php echo $row[id]; ?>" class="btn btn-success" >สั่งซื้อสินค้า</a>
+                             <a href="order.php?product_id=<?php echo $row[product_id]; ?>" class="btn btn-success" >สั่งซื้อสินค้า</a>
                         </p>
                     </div>
                 </div>

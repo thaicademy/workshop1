@@ -11,10 +11,10 @@
       if($row['email'] == $_POST['email'] && $row[password] == $_POST['password']){
           $_SESSION['email'] = $row['email'];
           $_SESSION['status'] = $row['status'];
-          $_SESSION['school'] = "โรงเรียนฝึกอาชีพกรุงเทมหมานคร(ดินแดง1)";
           $_SESSION['firstname'] = $row['firstname'];
           $_SESSION['lastname'] = $row['lastname'];
           $_SESSION['address'] = $row['address'];
+          
           header("location: ./dashboard.php"); 
       }else{
         echo "<script>

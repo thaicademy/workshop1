@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 04, 2022 at 12:51 PM
+-- Generation Time: Nov 07, 2022 at 12:05 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -30,9 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_blogs` (
   `id` int(11) NOT NULL,
-  `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `title` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `detail` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `img` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+  `img` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -54,7 +54,7 @@ INSERT INTO `tbl_blogs` (`id`, `title`, `detail`, `img`) VALUES
 
 CREATE TABLE `tbl_category` (
   `id` int(11) NOT NULL,
-  `cat_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+  `cat_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -74,9 +74,9 @@ INSERT INTO `tbl_category` (`id`, `cat_name`) VALUES
 
 CREATE TABLE `tbl_orderdetail` (
   `id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `qty` int(11) NOT NULL
+  `order_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -84,8 +84,16 @@ CREATE TABLE `tbl_orderdetail` (
 --
 
 INSERT INTO `tbl_orderdetail` (`id`, `order_id`, `product_id`, `qty`) VALUES
-(21, 40, 2, 2),
-(22, 41, 2, 2);
+(28, 57, 5, 1),
+(29, 58, 5, 1),
+(30, 58, 6, 1),
+(31, 58, 4, 1),
+(32, 59, 5, 1),
+(33, 59, 6, 1),
+(34, 59, 4, 1),
+(35, 60, 5, 1),
+(36, 60, 6, 2),
+(37, 60, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -94,21 +102,23 @@ INSERT INTO `tbl_orderdetail` (`id`, `order_id`, `product_id`, `qty`) VALUES
 --
 
 CREATE TABLE `tbl_orders` (
-  `oid` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
   `order_date` datetime DEFAULT NULL,
-  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `address` varchar(250) COLLATE utf8_bin NOT NULL,
-  `tel` varchar(20) COLLATE utf8_bin NOT NULL,
-  `email` varchar(20) COLLATE utf8_bin NOT NULL
+  `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `address` varchar(250) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `tel` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `email` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `tbl_orders`
 --
 
-INSERT INTO `tbl_orders` (`oid`, `order_date`, `name`, `address`, `tel`, `email`) VALUES
-(40, '2022-11-04 19:49:24', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
-(41, '2022-11-04 19:50:18', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com');
+INSERT INTO `tbl_orders` (`order_id`, `order_date`, `name`, `address`, `tel`, `email`) VALUES
+(57, '2022-11-07 19:01:06', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(58, '2022-11-07 19:03:20', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(59, '2022-11-07 19:03:32', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(60, '2022-11-07 19:04:12', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -117,22 +127,23 @@ INSERT INTO `tbl_orders` (`oid`, `order_date`, `name`, `address`, `tel`, `email`
 --
 
 CREATE TABLE `tbl_products` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `stock` int(10) NOT NULL,
-  `price` float NOT NULL,
-  `description` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `cat_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `img` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+  `product_id` int(11) NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `stock` int(10) DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  `description` text CHARACTER SET utf8 COLLATE utf8_bin,
+  `cat_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `img` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `tbl_products`
 --
 
-INSERT INTO `tbl_products` (`id`, `name`, `stock`, `price`, `description`, `cat_name`, `img`) VALUES
-(1, 'รองเท้า', 10, 500, ' ใช้สวมใส่', 'เครื่องแต่งกาย', './images/products/messageImage_1666233894578.jpg'),
-(2, 'Computer Notebook', 20, 25000, ' ใช้ทำงานพิมพ์เองสาร', 'อุปกรณ์ IT', './images/products/messageImage_1663138618479.jpg');
+INSERT INTO `tbl_products` (`product_id`, `name`, `stock`, `price`, `description`, `cat_name`, `img`) VALUES
+(4, 'Computer Notebook', 10, 500, ' TEst', 'อุปกรณ์ IT', './images/products/302317217_5496601157064754_6765919266768467945_n.jpg'),
+(5, 'รองเท้า', 20, 500, ' test', 'เครื่องแต่งกาย', './images/products/messageImage_1663138618479.jpg'),
+(6, 'RAM', 20, 2000, ' Test', 'อุปกรณ์ IT', './images/products/qrcode.png');
 
 -- --------------------------------------------------------
 
@@ -142,11 +153,11 @@ INSERT INTO `tbl_products` (`id`, `name`, `stock`, `price`, `description`, `cat_
 
 CREATE TABLE `tbl_users` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `lastname` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `firstname` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `lastname` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `email` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `status` varchar(50) COLLATE utf8_bin NOT NULL DEFAULT 'guest'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -185,13 +196,13 @@ ALTER TABLE `tbl_orderdetail`
 -- Indexes for table `tbl_orders`
 --
 ALTER TABLE `tbl_orders`
-  ADD PRIMARY KEY (`oid`);
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `tbl_products`
 --
 ALTER TABLE `tbl_products`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- Indexes for table `tbl_users`
@@ -219,19 +230,19 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_orderdetail`
 --
 ALTER TABLE `tbl_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `tbl_orders`
 --
 ALTER TABLE `tbl_orders`
-  MODIFY `oid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `tbl_products`
 --
 ALTER TABLE `tbl_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`

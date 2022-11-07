@@ -1,11 +1,11 @@
 <?php
   include "connect.php";
-  $id = $_GET[id];
+  $product_id = $_GET[product_id];
   $img = $_GET[img];
 
   unlink($img);
 
-  $sql = "DELETE  FROM tbl_products WHERE id='$id' ";
+  $sql = "DELETE  FROM tbl_products WHERE product_id='$product_id' ";
   $result = mysqli_query($conn, $sql);
   if($result){
     echo "ลบข้อมูลเรียบร้อย";
