@@ -44,7 +44,15 @@
                     ประเภทสินค้า
                 </div>
                 <div class="col-md-9">
-                    <input type="text" name="cat_name" class="form-control" />
+                    <select name="cat_name" class="form-control" >
+                        <?php
+                        $sql = "SELECT * FROM tbl_category";
+                        $result = mysqli_query($conn, $sql);
+                        while($row=mysqli_fetch_array($result)){
+                           echo"<option value='$row[cat_name]'>$row[cat_name]</option>";     
+                        }
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="row mb-2">
