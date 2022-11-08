@@ -7,7 +7,7 @@ ob_start();
 <div class="container">
     <div class="row">
         <div class="col-md-5">
-           <form action="checkout_save.php" method="post"  enctype="multipart/form-data">
+           <form action="checkout_save.php" method="post" enctype="multipart/form-data">
                ชื่อผู้ซื้อ
                <input type="text" name="name" class="form-control" value="<?php echo $_SESSION[firstname] ." ". $_SESSION[lastname]; ?>" />
                อีเมลผู้ซื้อ 

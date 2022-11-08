@@ -16,7 +16,7 @@ include "connect.php";
   $strOrderID= mysqli_insert_id($conn); //กำหนดค่า order id
 
  for($i=0; $i <= (int)$_SESSION["intLine"] ; $i++){
-   // if($_SESSION["strProductID"][$i] != ""){
+    if($_SESSION["strProductID"][$i] != ""){
         $sql2= "INSERT INTO tbl_orderdetail(order_id, product_id, qty)
                VALUES('".$strOrderID."' ,'".$_SESSION["strProductID"][$i]."', '".$_SESSION["strQty"][$i]."')";
         $result2 = mysqli_query($conn, $sql2);
@@ -24,12 +24,11 @@ include "connect.php";
           echo $conn-> error;
           exit();
         } 
-    //}
+    }
  }
 
-  //mysqli_close($conn);
-  //session_detroy(); 
-  //header("Location: view_order.php");
-  //echo "สั่งซื้อสำเร็จ";
-
+  echo "สั่งซื้อสำเร็จ";
+  mysqli_close($conn);
+  session_detroy(); 
+  header("Location: view_order.php");
 ?>
