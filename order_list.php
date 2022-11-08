@@ -52,7 +52,8 @@
    if($SumTotal > 0){
      echo"<a href='checkout.php' class='btn btn-success'> Checkout </a>";
    }
-
  ?>
+<br/>
+ <a href="product_select.php"> ย้อนไปสั่งซื้อสินค้า </a>
 
 </div>

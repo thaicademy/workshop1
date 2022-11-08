@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2022 at 12:05 PM
+-- Generation Time: Nov 08, 2022 at 12:27 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -93,7 +93,25 @@ INSERT INTO `tbl_orderdetail` (`id`, `order_id`, `product_id`, `qty`) VALUES
 (34, 59, 4, 1),
 (35, 60, 5, 1),
 (36, 60, 6, 2),
-(37, 60, 4, 3);
+(37, 60, 4, 3),
+(38, 61, 5, 1),
+(39, 61, 6, 2),
+(40, 61, 4, 3),
+(41, 62, 5, 1),
+(42, 62, 6, 2),
+(43, 62, 4, 3),
+(44, 63, 5, 1),
+(45, 63, 6, 2),
+(46, 63, 4, 3),
+(47, 64, 5, 1),
+(48, 64, 6, 2),
+(49, 64, 4, 3),
+(50, 65, 5, 1),
+(51, 65, 6, 2),
+(52, 65, 4, 3),
+(53, 66, 6, 4),
+(54, 66, 5, 3),
+(55, 66, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -118,7 +136,13 @@ INSERT INTO `tbl_orders` (`order_id`, `order_date`, `name`, `address`, `tel`, `e
 (57, '2022-11-07 19:01:06', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
 (58, '2022-11-07 19:03:20', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
 (59, '2022-11-07 19:03:32', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
-(60, '2022-11-07 19:04:12', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com');
+(60, '2022-11-07 19:04:12', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(61, '2022-11-07 19:20:51', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(62, '2022-11-07 19:21:03', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(63, '2022-11-07 19:37:58', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(64, '2022-11-07 19:38:20', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(65, '2022-11-07 19:38:23', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(66, '2022-11-08 19:03:55', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -230,13 +254,13 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_orderdetail`
 --
 ALTER TABLE `tbl_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `tbl_orders`
 --
 ALTER TABLE `tbl_orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `tbl_products`

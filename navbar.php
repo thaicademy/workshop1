@@ -63,8 +63,10 @@
 <?php
   if($_SESSION['email']){
 ?>
-  <li class="nav-item"><a href="logout.php"  class="nav-link"> Logout </a></li>
-  <li class="nav-item"><a href="profile.php"  class="nav-link"> Profile </a></li>
+<li class="nav-item"><a href="order_view.php"  class="nav-link"> การสั่งซื้อของฉัน </a></li>
+<li class="nav-item"><a href="profile.php"  class="nav-link"> Profile </a></li>
+<li class="nav-item"><a href="logout.php"  class="nav-link"> Logout </a></li>
+ 
 <?php
   }else{
 ?>
