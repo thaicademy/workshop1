@@ -53,7 +53,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="order_list.php" class="position-relative">ตะกร้า 
-             <span class="badge text-bg-danger"><?php echo $_SESSION[intLine]; ?></span>
+             <span class="badge text-bg-danger"><?php echo $_SESSION[intLine]+1; ?></span>
           </a>
         </li>
 

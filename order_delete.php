@@ -1,6 +1,12 @@
 <?php
   session_start();
-  $Line = $_GET['Line'];
-  $_SESSION["intLine"][$Line] = "";
-  session_destroy($Line);
+  
+  if(isset($_GET["Line"])){
+    $Line = $_GET['Line'];
+    $_SESSION["strProductID"][$Line] = "";
+    $_SESSION["strQty"][$Line] = "";
+  }
+
+header("location: order_list.php");
+  
 ?>

@@ -5,7 +5,7 @@ include "connect.php";
  $Total = 0;
  $SumTotal = 0;
  $sql = "INSERT INTO tbl_orders(order_date, name, address, tel, email) 
-         VALUES(now(), '$_POST[name]', '$_POST[address]', '$_POST[tel]', '$_POST[email]' )";
+         VALUES(now(), '$_POST[fullname]', '$_POST[address]', '$_POST[tel]', '$_POST[email]' )";
  $result = mysqli_query($conn, $sql);
  
    if(!$result){

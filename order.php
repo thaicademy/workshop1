@@ -5,8 +5,8 @@ session_start();
 if(!isset($_SESSION["intLine"])){
     $_SESSION["intLine"] = 0;
     $_SESSION["strProductID"][0] = $_GET["product_id"];
-    $_SESSION["strQty"][0] = 1; //จำนวนที่สั่ง 1 หน่วย
-     echo "สั่งสินค้าเรียบร้อย";
+    $_SESSION["strQty"][0] = 1;    //จำนวนที่สั่ง 1 หน่วย
+    echo "สั่งสินค้าเรียบร้อย";
     header("Location: order_list.php");
 }else{
     $key = array_search($_GET["product_id"], $_SESSION["strProductID"]);
