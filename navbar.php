@@ -3,6 +3,7 @@
   include "connect.php";
 ?>
 
+
 <!-- <link rel="stylesheet" href="./script/style.css" /> -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -32,11 +33,17 @@
           </a>
           <ul class="dropdown-menu">
          <?php
+         if($_SESSION['status'] == "admin"){
+           echo "<li><a class='dropdown-item' href='cat_form.php'> เพิ่มประเภทสินค้า</a></li>";
+           echo "<li><hr class='dropdown-divider'></li>";
+          }
+
           $sql = "SELECT * FROM tbl_category";
           $result = mysqli_query($conn, $sql);
+         
           while($row = mysqli_fetch_array($result)){ 
          ?>
-            <li><a class="dropdown-item" href="#"><?php echo"$row[cat_name]"; ?></a></li>
+            <li><a class="dropdown-item" href="cat_product.php?cat_name=<?= $row[cat_name] ?>"><?php echo"$row[cat_name]"; ?></a></li>
          <?php
           }
          ?>
