@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 08, 2022 at 12:27 PM
+-- Generation Time: Nov 21, 2022 at 12:37 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -64,7 +64,10 @@ CREATE TABLE `tbl_category` (
 INSERT INTO `tbl_category` (`id`, `cat_name`) VALUES
 (1, 'อุปโภค'),
 (2, 'บริโภค'),
-(3, 'อิเล็กทรอนิกส์');
+(3, 'อิเล็กทรอนิกส์'),
+(4, 'IT'),
+(5, 'Network'),
+(6, 'Semi Conductor');
 
 -- --------------------------------------------------------
 
@@ -111,7 +114,21 @@ INSERT INTO `tbl_orderdetail` (`id`, `order_id`, `product_id`, `qty`) VALUES
 (52, 65, 4, 3),
 (53, 66, 6, 4),
 (54, 66, 5, 3),
-(55, 66, 4, 2);
+(55, 66, 4, 2),
+(56, 67, 5, 1),
+(57, 67, 6, 2),
+(58, 67, 4, 1),
+(59, 68, 5, 1),
+(60, 68, 6, 2),
+(61, 68, 4, 1),
+(62, 69, 5, 1),
+(63, 69, 6, 2),
+(64, 69, 4, 1),
+(65, 70, 6, 1),
+(66, 70, 5, 1),
+(67, 71, 9, 2),
+(68, 71, 11, 1),
+(69, 71, 13, 1);
 
 -- --------------------------------------------------------
 
@@ -142,7 +159,12 @@ INSERT INTO `tbl_orders` (`order_id`, `order_date`, `name`, `address`, `tel`, `e
 (63, '2022-11-07 19:37:58', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
 (64, '2022-11-07 19:38:20', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
 (65, '2022-11-07 19:38:23', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
-(66, '2022-11-08 19:03:55', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com');
+(66, '2022-11-08 19:03:55', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(67, '2022-11-09 19:09:55', 'สมศักดิ์ ใจเกินร้อย 150', ' กทม ', '', 'admin@gmail.com'),
+(68, '2022-11-09 19:20:28', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(69, '2022-11-09 19:24:32', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com'),
+(70, '2022-11-11 18:35:49', ' สมเกียรติ ใจดี', '  กทม', '', 'admin@gmail.com'),
+(71, '2022-11-21 18:54:04', 'สมศักดิ์ ใจเกินร้อย', ' กทม ', '', 'admin@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -159,15 +181,6 @@ CREATE TABLE `tbl_products` (
   `cat_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `img` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Dumping data for table `tbl_products`
---
-
-INSERT INTO `tbl_products` (`product_id`, `name`, `stock`, `price`, `description`, `cat_name`, `img`) VALUES
-(4, 'Computer Notebook', 10, 500, ' TEst', 'อุปกรณ์ IT', './images/products/302317217_5496601157064754_6765919266768467945_n.jpg'),
-(5, 'รองเท้า', 20, 500, ' test', 'เครื่องแต่งกาย', './images/products/messageImage_1663138618479.jpg'),
-(6, 'RAM', 20, 2000, ' Test', 'อุปกรณ์ IT', './images/products/qrcode.png');
 
 -- --------------------------------------------------------
 
@@ -248,25 +261,25 @@ ALTER TABLE `tbl_blogs`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_orderdetail`
 --
 ALTER TABLE `tbl_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `tbl_orders`
 --
 ALTER TABLE `tbl_orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `tbl_products`
 --
 ALTER TABLE `tbl_products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
