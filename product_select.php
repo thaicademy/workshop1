@@ -25,7 +25,7 @@
         ?>
         </h1>
        
-        <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="row row-cols-1 row-cols-md-4 g-4 pt-2">
      
   <?php
      include "connect.php";
@@ -43,10 +43,9 @@
                                echo "ราคา $row[price] บาท <br />";
                                echo "คงเหลือ $row[stock] <br />";
                                echo "$row[cat_name] <br />"; 
-                               echo "$row[description] <br />";
                                $desc = $row['description'];
-                               if(strlen($desc) > 150){
-                                 $desc = substr($desc,0,150)."<a href='product_detail.php?product_id=$row[product_id]'>Read more...</a>";
+                               if(strlen($desc) > 250){
+                                 $desc = substr($desc,0,250)."<a href='product_detail.php?product_id=$row[product_id]'>Read more...</a>";
                                  echo "$desc";
                                 }
   
