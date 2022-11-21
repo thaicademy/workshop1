@@ -1,7 +1,6 @@
 <?php
   session_start();
   include "connect.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +82,7 @@
                 </div>
             </div>
             <div class="d-grid">
-                <input type="submit" value="บัณทึก" class="btn btn-primary btn-lg" />
+                <input type="submit" value="แก้ไข" class="btn btn-primary btn-lg" />
             </div>
         </form>
     </div>

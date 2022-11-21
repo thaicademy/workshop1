@@ -37,13 +37,19 @@
                 <div class="card">
                     <img src="<?php echo $row[img]; ?>" class="card-img-top" style="max-height: 100px; object-fit: cover;" />
                     <div class="card-body">
-                        <h5 class="card-title"> <?php echo "$row[name] "; ?></h5>
+                        <h5 class="card-title"> <?php echo "<a href='product_detail.php?product_id=$row[product_id]'> $row[name] </a>"; ?></h5>
                         <p class="card-text">
                             <?php
                                echo "ราคา $row[price] บาท <br />";
                                echo "คงเหลือ $row[stock] <br />";
-                               echo "$row[description] <br />";
                                echo "$row[cat_name] <br />"; 
+                               echo "$row[description] <br />";
+                               $desc = $row['description'];
+                               if(strlen($desc) > 150){
+                                 $desc = substr($desc,0,150)."<a href='product_detail.php?product_id=$row[product_id]'>Read more...</a>";
+                                 echo "$desc";
+                                }
+  
                                if($_SESSION['status']== 'admin'){
                                   echo "<a href='product_edit.php?product_id=$row[product_id]&&img=$row[img]' class='btn btn-info'>แก้ไข</a> ";
                                   echo "<a href='product_delete.php?product_id=$row[product_id]&&img=$row[img]' class='btn btn-danger'>ลบ</a>";
