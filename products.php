@@ -7,18 +7,18 @@
     ?>
 
     <div class="col">
-        <div class="card">
+        <div class="card h-100">
             <img src="<?php echo $row[img]; ?>" class="card-img-top" />
             <div class="card-body">
-                <h5 class="card-title"> <?php echo "ชื่อสินค้า $row[name] "; ?></h5>
+                <h5 class="card-title"> <?php echo "<a href='product_detail.php?product_id=$row[product_id]'> $row[name] </a> "; ?></h5>
                 <p class="card-text">
                     <?php
                         echo "ราคา $row[price] บาท <br />";
                         echo "จำนวนสินค้าในคลัง $row[stock] <br />";
                         echo "ประเภทสินค้า: $row[cat_name] <br />"; 
                         $desc = $row['description'];
-                        if(strlen($desc) > 250){
-                          $desc = substr($desc,0,250)."..<a href='product_detail.php?product_id=$row[product_id]'>Read more</a>";
+                        if(strlen($desc) > 200){
+                          $desc = substr($desc,0,200)."..<a href='product_detail.php?product_id=$row[product_id]'>Read more</a>";
                           echo "$desc";
                          }  
                     ?> 
