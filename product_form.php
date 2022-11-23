@@ -2,38 +2,38 @@
       include "navbar.php";
     ?>
 
-<div class="container-fluid col-md-6">
+<div class="container-fluid col-md-8">
     <form action="product_insert.php" method="post" enctype="multipart/form-data"><br />
         <div class="row mb-2">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 ชื่อสินค้า
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <input type="text" name="name" class="form-control" />
             </div>
         </div>
         <div class="row mb-2">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 ราคา
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <input type="text" name="price" class="form-control" />
             </div>
         </div>
         <div class="row mb-2">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 คงเหลือ
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <input type="text" name="stock" class="form-control" />
             </div>
         </div>
         <div class="row mb-2">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 ประเภทสินค้าหลัก
             </div>
-            <div class="col-md-9">
-                <select name="cat_name" class="form-control" >
+            <div class="col-md-10">
+                <select name="cat_name" class="form-control">
                     <?php
                         $sql = "SELECT * FROM tbl_category";
                         $result = mysqli_query($conn, $sql);
@@ -45,11 +45,11 @@
             </div>
         </div>
         <div class="row mb-2">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 ประเภทสินค้าย่อย
             </div>
-            <div class="col-md-9">
-                <select name="sub_name" class="form-control" onChange="updateInterval(this)">
+            <div class="col-md-10">
+                <select name="sub_name" class="form-control">
                     <?php
                         $sql2 = "SELECT * FROM tbl_subcategory WHERE cat_name='$row[cat_name]' ";
                         $result2 = mysqli_query($conn, $sql2);
@@ -62,18 +62,18 @@
         </div>
 
         <div class="row mb-2">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 รายละเอียด
             </div>
-            <div class="col-md-9">
-                <textarea rows=" 5" cols="50" name="description" class="form-control"> </textarea>
+            <div class="col-md-10">
+                <textarea rows=" 5" cols="50" name="description" class="form-control" id="editor"> </textarea>
             </div>
         </div>
         <div class="row mb-2">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 แทรกรูป
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <input type="file" name="img" class="form-control" />
             </div>
         </div>
@@ -84,19 +84,9 @@
 </div>
 
 <script>
-function updateInterval(e) {
-    var options = e.options
-    var seconds = options[options.selectedIndex].value
-
-    if (this.currentInterval)
-        clearInterval(this.currentInterval)
-
-    if (!isNaN(seconds))
-        this.currentInterval = setInterval(
-            function() {
-                location.reload()
-            },
-            seconds * 1000
-        )
-}
+ClassicEditor
+    .create(document.querySelector('#editor'))
+    .catch(error => {
+        console.error(error);
+    });
 </script>

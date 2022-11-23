@@ -2,17 +2,7 @@
   session_start();
   include "connect.php";
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
     <?php
       include "navbar.php";
        $product_id=$_GET['product_id'];
@@ -21,7 +11,7 @@
        $row=mysqli_fetch_array($result);
     ?>
     
-    <div class="container-fluid col-md-6">
+    <div class="container-fluid col-md-8">
         <form action="product_update.php?product_id=<?= $product_id ?>" method="post" enctype="multipart/form-data"><br />
             <div class="row mb-2">
                 <div class="col-md-3">
@@ -69,7 +59,7 @@
                     รายละเอียด
                 </div>
                 <div class="col-md-9">
-                    <textarea rows=" 5" cols="50" name="description" class="form-control" ><?= $row['description']; ?></textarea>
+                    <textarea rows=" 5" cols="50" name="description" class="form-control" id="editor" ><?= $row['description']; ?></textarea>
                 </div>
             </div>
             <div class="row mb-2">
@@ -87,6 +77,10 @@
         </form>
     </div>
 
-</body>
-
-</html>
+    <script>
+ClassicEditor
+    .create(document.querySelector('#editor'))
+    .catch(error => {
+        console.error(error);
+    });
+</script>

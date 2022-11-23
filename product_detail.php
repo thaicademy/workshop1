@@ -20,7 +20,7 @@
                     <p class="card-text">ราคา <?= $row['price']; ?> บาท</p>
                     <p class="card-text">คงเหลือ <?= $row['stock']; ?></p>
                     <p class="card-text">ประเภทสินค้า <?= $row['cat_name']; ?></p>
-                    <p class="card-text"> <?= $row['description']; ?></p>
+                     <?= $row['description']; ?>
                     <a href="order.php?product_id=<?php echo $row[product_id]; ?>" class="btn btn-success" >สั่งซื้อสินค้า</a>
                 </div>
             </div>
