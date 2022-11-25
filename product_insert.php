@@ -7,7 +7,7 @@ $uploadPath = dirname(__FILE__) . DIRECTORY_SEPARATOR . './images/products/origi
 copy($tempPath, $uploadPath);
 
 
-$sql = "INSERT INTO tbl_products (name, price, stock, description, cat_name)
+$sql = "INSERT INTO tbl_products (name, price, stock, description, cat_name )
         VALUES ('$_POST[name]', '$_POST[price]', '$_POST[stock]', '$_POST[description]', '$_POST[cat_name]')";
 $result = mysqli_query($conn, $sql);
 
@@ -17,8 +17,8 @@ $newname = $id . '.' . $ext;
 
 
 if ($result) {
-  $sql="UPDATE tbl_products SET img='$newname' WHERE id='$id'";
-  mysqli_query($conn, $sql);
+  $sql2="UPDATE tbl_products SET img='$newname' WHERE product_id='$id'";
+  mysqli_query($conn, $sql2);
 
 //--- Resize img ----
 if ($ext == "jpg") {

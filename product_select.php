@@ -35,7 +35,7 @@
 ?>
             <div class="col">
                 <div class="card h-100">
-                    <img src="<?php echo $row[img]; ?>" class="card-img-top" style="max-height: 100px; object-fit: cover;" /> 
+                    <img src="./images/products/<?php echo $row[img]; ?>" class="card-img-top" style="max-height: 100px; object-fit: cover;" /> 
                     
                     <div class="card-body">
                         <h5 class="card-title"> <?php echo "<a href='product_detail.php?product_id=$row[product_id]'> $row[name] </a>"; ?></h5>

@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ติดต่อเรา</title>
-</head>
-
-<body class="bgimg">
     <?php
       include "navbar.php";
     ?>
@@ -21,6 +11,6 @@
             referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     </div>
-</body>
-
-</html>
+    <?php
+       include "footer.php";
+   ?>
