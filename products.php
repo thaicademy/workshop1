@@ -1,7 +1,3 @@
-<?php
-       include "header.php";
-   ?>
-
 
 <div class="row row-cols-1 row-cols-md-4 g-3">
     <?php
@@ -46,6 +42,3 @@
 ?>
 </div>
 
-<?php
-       include "footer.php";
-   ?>

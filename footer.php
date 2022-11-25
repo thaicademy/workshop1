@@ -10,23 +10,23 @@
 
     <!-- Right -->
     <div>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
+      <a href="" class="me-4 text-primary">
+         <i class="bi bi-facebook"></i>
+      </a>
+      <a href="" class="me-4 text-info">
+        <i class="bi bi-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-danger">
+        <i class="bi bi-google"></i>
+      </a>
+      <a href="" class="me-4 text-danger">
+        <i class="bi bi-instagram"></i>
       </a>
       <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
+        <i class="bi bi-linkedin"></i>
       </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
+      <a href="" class="me-4 text-success fs-1">
+      <i class="bi bi-line"></i>
       </a>
     </div>
     <!-- Right -->
