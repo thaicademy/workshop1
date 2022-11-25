@@ -1,5 +1,5 @@
 <?php
-    include "navbar.php";
+    include "header.php";
 ?>
 
 <div class="container-fluid">
@@ -7,4 +7,9 @@
     <p> <?php echo"$_SESSION[email]"; ?> </p>
     
 </div>
+
+<?php
+       include "footer.php";
+   ?>
+
 

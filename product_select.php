@@ -1,19 +1,6 @@
-<?php    
-  session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
     <?php
-      include "navbar.php";
+      include "header.php";
    ?>
     <div class="container-fluid">
 
@@ -54,11 +41,11 @@
                         <p>
                             <?php
                              if($_SESSION['status']== 'admin'){
-                                  echo "<a href='product_edit.php?product_id=$row[product_id]&&img=$row[img]' class='btn btn-info'>แก้ไข</a> ";
-                                  echo "<a href='product_delete.php?product_id=$row[product_id]&&img=$row[img]' class='btn btn-danger'>ลบ</a>";
+                                  echo "<a href='product_edit.php?product_id=$row[product_id]&&img=$row[img]' class='btn btn-info btn-sm'>แก้ไข</a> ";
+                                  echo "<a href='product_delete.php?product_id=$row[product_id]&&img=$row[img]' class='btn btn-danger btn-sm'>ลบ</a>";
                                }
                             ?>
-                            <a href="order.php?product_id=<?php echo $row[product_id]; ?>" class="btn btn-success" >สั่งซื้อสินค้า</a>
+                            <a href="order.php?product_id=<?php echo $row[product_id]; ?>" class="btn btn-success btn-sm" >สั่งซื้อสินค้า</a>
                         </p>
                     </div>
                 </div>
@@ -68,6 +55,7 @@
 ?>
         </div>
     </div>
-</body>
-
-</html>
+    
+    <?php
+       include "footer.php";
+   ?>

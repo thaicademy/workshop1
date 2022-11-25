@@ -1,5 +1,5 @@
 <?php
-      include "navbar.php";
+      include "header.php";
 ?>
 <div class="container-fluid col-md-6 pt-2">
     <form action="sub_insert.php" method="post" enctype="multipart/form-data">
@@ -33,3 +33,8 @@
         </div>
     </form>
 </div>
+
+
+<?php
+      include "footer.php";
+    ?>
