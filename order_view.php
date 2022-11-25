@@ -1,6 +1,5 @@
 <?php
-  session_start();
-  include "navbar.php";
+  include "header.php";
 ?>
 
 <h1>การสั่งซื้อของฉัน</h1>
@@ -24,3 +23,7 @@
   }
 ?>
 </table>
+
+<?php
+       include "footer.php";
+   ?>

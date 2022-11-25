@@ -1,5 +1,5 @@
 <?php
-      include "navbar.php";
+      include "header.php";
     ?>
 
 <div class="container-fluid col-md-8">
@@ -90,3 +90,7 @@ ClassicEditor
         console.error(error);
     });
 </script>
+
+<?php
+       include "footer.php";
+?>

@@ -1,6 +1,6 @@
 
     <?php
-      include "navbar.php";
+      include "header.php";
     ?>
     <div class="container-fluid">
         <h1 class="abc">ติดต่อเรา</h1>

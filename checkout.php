@@ -1,8 +1,5 @@
 <?php
-ob_start();
-  session_start();
-  include "connect.php";
-  include "navbar.php";
+  include "header.php";
 ?>
 <div class="container">
     <div class="row">
@@ -57,3 +54,8 @@ ob_start();
     <a href="product_select.php"> ย้อนไปสั่งซื้อสินค้า </a>
 
 </div>
+
+
+<?php
+       include "footer.php";
+   ?>

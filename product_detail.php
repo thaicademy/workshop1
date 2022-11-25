@@ -1,7 +1,8 @@
 <?php
- session_start();
+ include "header.php";
+
  $product_id = $_GET['product_id'];
- include "navbar.php";
+
 
  $sql = "SELECT * FROM tbl_products WHERE product_id='$product_id' ";
  $result = mysqli_query($conn, $sql);
@@ -27,3 +28,7 @@
         </div>
     </div>
 </div>
+
+<?php
+       include "footer.php";
+   ?>

@@ -1,10 +1,6 @@
 <?php
-  session_start();
-  include "connect.php";
-?>
+      include "header.php";
 
-    <?php
-      include "navbar.php";
        $product_id=$_GET['product_id'];
        $sql = "SELECT * FROM tbl_products WHERE product_id='$product_id' ";
        $result=mysqli_query($conn, $sql);
@@ -84,3 +80,7 @@ ClassicEditor
         console.error(error);
     });
 </script>
+
+<?php
+       include "footer.php";
+   ?>

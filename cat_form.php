@@ -1,5 +1,4 @@
-
-    <?php
+<?php
       include "header.php";
     ?>
     <div class="container-fluid col-md-6">
@@ -17,3 +16,8 @@
             </div>
         </form>
     </div>
+
+    
+ <?php
+       include "footer.php";
+   ?>

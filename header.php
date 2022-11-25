@@ -16,6 +16,8 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
 </head>
 <body>
+      
+<img src="./images/top.jpg" class="img-fluid"/>
 
 <?php
   include "navbar.php";
