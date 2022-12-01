@@ -15,7 +15,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-</head>
+    <script src="./script/jquery.min.js"></script>
+    <script src="./script/script.js"></script>
+
+
+  </head>
 <body>
 
 <img src="./images/top.jpg" class="card-img-top" style="max-height: 100px; object-fit: cover;" />

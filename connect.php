@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root1234";
-$dbname = "workshop1";  //ชื่อฐานข้อมูล
+$servername = "us-cdbr-east-06.cleardb.net";
+$username = "bcfa287788eff9";
+$password = "58c505aa";
+$dbname = "heroku_9e8cfc737b5af21";  //ชื่อฐานข้อมูล
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
