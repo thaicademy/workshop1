@@ -5,12 +5,12 @@ $(function(){
 
     // on change province
     categoryObject.on('change', function(){
-        var categoryId = $(this).val();
+        var categoryName = $(this).val();
 
         subObject.html('<option value="">เลือกประเภทสินค้าย่อย</option>');
       //  districtObject.html('<option value="">เลือกตำบล</option>');
 
-        $.get('get_subcategory.php?category_id=' + categoryId, function(data){
+        $.get('get_subcategory.php?cat_name=' + categoryName, function(data){
             var result = JSON.parse(data);
             $.each(result, function(index, item){
                 subObject.append(

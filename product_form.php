@@ -33,7 +33,7 @@
                 ประเภทสินค้าหลัก
             </div>
             <div class="col-md-10">
-                <select name="cat_name" class="form-control">
+                <select name="cat_name" class="form-control" id="category">
                     <?php
                         $sql = "SELECT * FROM tbl_category";
                         $result = mysqli_query($conn, $sql);

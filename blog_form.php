@@ -2,7 +2,7 @@
     <?php
        include "header.php";
     ?>
-    <div class="container col-md-6">
+    <div class="container">
         <h1 class="text-center">Blogs</h1>
         <form action="blog_insert.php" method="post" enctype="multipart/form-data">
             <div class="row mb-2">
@@ -18,7 +18,7 @@
                     เนื้อหา
                 </div>
                 <div class="col-md-9">
-                    <textarea rows="" cols="" name="detail" class="form-control"></textarea>
+                    <textarea rows="" cols="" name="detail" class="form-control" id="editor"></textarea>
                 </div>
             </div>
             <div class="row mb-2">
@@ -35,6 +35,15 @@
         </form>
 
     </div>
+
+    <script>
+ClassicEditor
+    .create(document.querySelector('#editor'))
+    .catch(error => {
+        console.error(error);
+    });
+</script>
+
 <?php
    include "footer.php";
 ?>
