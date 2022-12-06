@@ -6,7 +6,6 @@ $tempPath = $_FILES["img"]["tmp_name"];
 $uploadPath = dirname(__FILE__) . DIRECTORY_SEPARATOR . './images/products/original' . DIRECTORY_SEPARATOR . $_FILES['img']['name'];
 copy($tempPath, $uploadPath);
 
-
 $sql = "INSERT INTO tbl_products (name, price, stock, description, cat_name )
         VALUES ('$_POST[name]', '$_POST[price]', '$_POST[stock]', '$_POST[description]', '$_POST[cat_name]')";
 $result = mysqli_query($conn, $sql);
