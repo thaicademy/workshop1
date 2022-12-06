@@ -14,7 +14,7 @@ $(function(){
             var result = JSON.parse(data);
             $.each(result, function(index, item){
                 subObject.append(
-                    $('<option></option>').val(item.id).html(item.name_th)
+                    $('<option></option>').val(item.cat_name).html(item.sub_name)
                 );
             });
         });

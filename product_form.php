@@ -49,15 +49,19 @@
                 ประเภทสินค้าย่อย
             </div>
             <div class="col-md-10">
-                <select name="sub_name" class="form-control">
+                <!-- <select name="sub_name" class="form-control">
                     <?php
-                        $sql2 = "SELECT * FROM tbl_subcategory WHERE cat_name='$row[cat_name]' ";
-                        $result2 = mysqli_query($conn, $sql2);
-                        while($row2=mysqli_fetch_array($result2)){
-                           echo"<option value='$row2[sub_name]'>$row2[sub_name]</option>";     
-                        }
+                       // $sql2 = "SELECT * FROM tbl_subcategory WHERE cat_name='$row[cat_name]' ";
+                       // $result2 = mysqli_query($conn, $sql2);
+                       // while($row2=mysqli_fetch_array($result2)){
+                       //    echo"<option value='$row2[sub_name]'>$row2[sub_name]</option>";     
+                       // }
                         ?>
+                </select> -->
+                <select name="sub_name" class="form-control" id="category">
+                        <option>เลือกประเภทสินค้าย่อย</option>
                 </select>
+
             </div>
         </div>
 

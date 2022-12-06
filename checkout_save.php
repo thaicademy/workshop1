@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start(); 
 include "connect.php";
 
@@ -28,7 +29,8 @@ include "connect.php";
  }
 
   echo "สั่งซื้อสำเร็จ";
+  //session_unset();
+  session_destroy();
   mysqli_close($conn);
-  session_detroy(); 
   header("Location: view_order.php");
 ?>
