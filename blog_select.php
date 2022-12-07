@@ -21,7 +21,7 @@
             <div class="card">
                 <img src="./images/blog/<?php echo $row[img]; ?>" class="card-img-top" />
                 <div class="card-body">
-                    <h5 class="card-title"> <?php echo "$row[title]"; ?></h5>
+                    <h5 class="card-title"> <?php echo "<a href='blog_detail.php?id=$row[id]'>$row[title]</a>"; ?></h5>
                     <p class="card-text">
                         <?php
                                echo "$row[detail]";
