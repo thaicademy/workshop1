@@ -25,7 +25,7 @@
                     <p class="card-text">
                         <?php
                                echo "$row[detail]";
-                            ?>
+                        ?>
                     </p>
                     <p>
                     <?php
