@@ -53,6 +53,9 @@
              <span class="badge text-bg-danger"><?php echo $_SESSION[intLine]+1; ?></span>
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="payment.php">แจ้งชำระเงิน</a>
+        </li>
 
       </ul>
 
